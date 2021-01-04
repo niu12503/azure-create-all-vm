@@ -4,7 +4,6 @@
 One-click to use up all quotas to create virtual machines in batches and run commands.
 
 ![Screenshot1](https://github.com/sslspace/azure-create-all-vm/blob/main/Screenshot1.jpg "Screenshot1")
-
 ![Screenshot2](https://github.com/sslspace/azure-create-all-vm/blob/main/Screenshot1.jpg "Screenshot2")
 
 ## 使用教程
