@@ -66,7 +66,7 @@ else:
     print("未知订阅，请手动修改创建虚拟机的数量")
     print("若当前订阅为Azure for Students、免费试用或即用即付，请进入“创建虚拟机”界面，任意填写信息，一直到“查看+创建”项（创建虚拟机"
           "的最后一步）显示“验证通过”即可自动刷新配额")
-    print("假如还未解决，请直接修改limit = f.getvalue()中的f.getvalue()为\"区域配额\"（包括英文引号）。Azure for Students是6，即用即付是10，免费试用订阅是4")
+    print("假如还未解决，请直接修改第26行limit = f.getvalue()中的f.getvalue()为\"区域配额\"（包括英文引号）。Azure for Students是6，即用即付是10，免费试用订阅是4")
     exit(1)
 
 # 2.创建资源组
@@ -131,15 +131,11 @@ print("大功告成！在31个区域创建虚拟机的命令已成功执行")
 for i in range(120, -1, -1):
     print("\r正在等待Azure生成统计信息，还需等待{}秒".format(i), end="", flush=True)
     time.sleep(1)
-f = io.StringIO()
-with redirect_stdout(f):
-    get_default_cli().invoke(['vm', 'list', '--query', '[*].name'])
-    result = f.getvalue()
-vmname = json.loads(result)
-print("\n\n------------------------------------------------------------------------------\n")
-print(str(vmname))
 print("\n------------------------------------------------------------------------------\n")
-print("已创建了" + str(len(vmname)) + "台虚拟机")
+print("以下是已创建的虚拟机列表：")
+get_default_cli().invoke(['vm', 'list', '--query', '[*].name'])
+print("\n\n------------------------------------------------------------------------------\n")
+
 
 
 # 如果想删除脚本创建的所有资源，取消注释以下语句
