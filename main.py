@@ -66,7 +66,7 @@ else:
     print("未知订阅，请手动修改创建虚拟机的数量")
     print("若当前订阅为Azure for Students、免费试用或即用即付，请进入“创建虚拟机”界面，任意填写信息，一直到“查看+创建”项（创建虚拟机"
           "的最后一步）显示“验证通过”即可自动刷新配额")
-    print("假如还未解决，请直接修改第26行limit = f.getvalue()中的f.getvalue()为\"区域配额\"（包括英文引号）。Azure for Students是6，即用即付是10，免费试用订阅是4")
+    print("假如还未解决，请直接修改第26行limit = f.getvalue()中的f.getvalue()为'区域配额'（包括英文引号）。Azure for Students是6，即用即付是10，免费试用订阅是4")
     exit(1)
 
 # 2.创建资源组
